@@ -71,13 +71,20 @@
         section h2 {
           text-align: center;
           color: #00563b;
+          font-weight: 600;
+        }
+        section p {
+          line-height: 1.6;
+          font-size: 16px;
+          color: #333;
+          font-weight: normal;
+          font-style: normal;
         }
         .image-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 15px;
           margin-top: 20px;
-          
         }
         .image-grid img {
           width: 100%;
@@ -85,7 +92,32 @@
           border-radius: 8px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
- 
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+          section p {
+            font-size: 15px;
+            line-height: 1.7;
+            letter-spacing: 0.2px;
+            font-weight: 400;
+          }
+          
+          section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+          }
+
+          .image-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+          }
+
+          header h1 {
+            font-size: 26px;
+            font-weight: bold;
+          }
+        }
       </style>
 
 <header>
@@ -94,9 +126,9 @@
   
   <section>
     <h2 id="foodd">Food Relief</h2>
-    <p>Ahlul Kheir Foundation is deeply committed to supporting vulnerable communities by providing year-round food aid, with special emphasis on Ramadan. Throughout the year, the foundation helps reduce hunger and its effects for struggling families, ensuring they have consistent access to food. However, the foundation’s efforts intensify during Ramadan, a time when many are fasting but lack the means to break it adequately. Partnering with Jamia Mosque, Ahlul Kheir Foundation distributes nutritious food packages to hundreds of families, allowing them to break their fast with dignity and comfort.
+    <p>Ahlul Kheir Foundation is deeply committed to supporting vulnerable communities by providing year-round food aid, with special emphasis on Ramadan. Throughout the year, the foundation helps reduce hunger and its effects for struggling families, ensuring they have consistent access to food. However, the foundation's efforts intensify during Ramadan, a time when many are fasting but lack the means to break it adequately. Partnering with Jamia Mosque, Ahlul Kheir Foundation distributes nutritious food packages to hundreds of families, allowing them to break their fast with dignity and comfort.
       Remarkably, as little as 30 dollars is enough to feed an entire family for the whole month of Ramadan. This small yet impactful contribution covers the cost of essential food items, such as rice, lentils, and dates, ensuring that underprivileged households can observe the fast without fear of hunger. In addition to addressing immediate food needs, this initiative fosters a deep sense of inclusion and solidarity, bringing joy and security to families who often feel left behind.
-      By focusing on food distribution, especially during sacred times like Ramadan, Ahlul Kheir Foundation strengthens the community’s sense of charity, compassion, and shared responsibility, ensuring that no one is left to go hungry. This initiative reflects the foundation’s broader mission to uplift the less privileged and build resilient communities rooted in kindness and generosity.</p>
+      By focusing on food distribution, especially during sacred times like Ramadan, Ahlul Kheir Foundation strengthens the community's sense of charity, compassion, and shared responsibility, ensuring that no one is left to go hungry. This initiative reflects the foundation's broader mission to uplift the less privileged and build resilient communities rooted in kindness and generosity.</p>
     <div class="image-grid">
       <img src="/project/food22.jpg" alt="Food Image 1">
       <img src="/project/food2.jpg" alt="Food Image 1">
@@ -190,7 +222,7 @@
   <section id="health">
     
     <h2>Health Aid</h2>
-    <p>The Ahlul Kheir Foundation is deeply committed to improving the health and well-being of vulnerable communities by providing essential healthcare services and medical aid to those in need. Recognizing that access to quality healthcare is a fundamental right, the foundation works year-round to deliver life-saving treatments, medicines, and preventive care to underserved families. Through partnerships with local clinics and healthcare professionals, Ahlul Kheir Foundation organizes free medical camps, offering check-ups, vaccinations, and treatments for common illnesses, ensuring that even the most marginalized individuals receive the care they deserve. With a donation as small as 50 dollars, the foundation can provide a family with a month’s supply of essential medicines, addressing critical health needs and fostering a sense of dignity and hope. By prioritizing health aid, Ahlul Kheir Foundation not only alleviates immediate suffering but also builds stronger, healthier communities rooted in compassion and shared responsibility.</p>
+    <p>The Ahlul Kheir Foundation is deeply committed to improving the health and well-being of vulnerable communities by providing essential healthcare services and medical aid to those in need. Recognizing that access to quality healthcare is a fundamental right, the foundation works year-round to deliver life-saving treatments, medicines, and preventive care to underserved families. Through partnerships with local clinics and healthcare professionals, Ahlul Kheir Foundation organizes free medical camps, offering check-ups, vaccinations, and treatments for common illnesses, ensuring that even the most marginalized individuals receive the care they deserve. With a donation as small as 50 dollars, the foundation can provide a family with a month's supply of essential medicines, addressing critical health needs and fostering a sense of dignity and hope. By prioritizing health aid, Ahlul Kheir Foundation not only alleviates immediate suffering but also builds stronger, healthier communities rooted in compassion and shared responsibility.</p>
     <div class="image-grid">
       <img src="/project/health1.png" alt="health image 1">
       <img src="/project/health2.png" alt="health image 1">
@@ -234,3 +266,12 @@
           </div>
         </div>
       </section>
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
