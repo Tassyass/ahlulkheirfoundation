@@ -56,6 +56,33 @@
         font-style: normal;
       }
     }
+
+    /* M-PESA Section Responsive Styles */
+    .mpesa-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+      .mpesa-container {
+        max-width: 100%;
+        padding: 10px;
+      }
+      
+      .card {
+        margin: 0 15px;
+      }
+      
+      .lead {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      
+      h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+    }
   </style>
 
   <title>AhlulKheir Foundation</title>
@@ -712,17 +739,36 @@
    </div>
  </section>
 
+ <!-- M-PESA Payment Section -->
+ <section class="container-fluid mb-5 text-center">
+   <div class="row justify-content-center">
+     <div class="col-md-8">
+       <div class="card p-4 shadow-sm">
+         <h2 class="mb-4" style="color: #00563B;">Support Our Cause</h2>
+         <div class="mpesa-container px-2">
+           <img src="/images/mpesa.png" alt="Lipa na M-PESA" class="img-fluid mb-4" style="max-width: 100%; height: auto;">
+         </div>
+         <div class="mb-4 px-3">
+           <p class="lead" style="color: #00563B; font-weight: 500;">
+             Your contribution changes lives locally and globally. Thank you for making a difference!
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
  <!-- become helper -->
 
  <section class="container pb-4" id="help">
    <div class="row" id="volunteer">
      <div class="col-12 text-center">
-       <img src="/images/love in hands.jpg" alt="" width="250px" />
-       <h1 class="">
+       <!-- <img src="/images/love in hands.jpg" alt="" width="250px" /> -->
+       <!-- <h1 class="">
          Help People Change Lives <br class="d-none d-md-block" />
          Locally and Around <br class="d-none d-md-block" />
          The World
-       </h1>
+       </h1> -->
      </div>
      <div class="my-3 my-md-5 text-center">
        <a href="volunteer.html">Become a Volunteer</a>
@@ -748,8 +794,8 @@
      
      <div class="col-md-4 f_contact">
        <h4 id="contactt">Contact</h4>
-       <a href="volunteer.html">
-         <i class="fa-solid fa-paper-plane"></i>info@ahlulkheirfoundation.org</a>
+       <a href="mailto:ahlulkheir1@gmail.com">
+         <i class="fa-solid fa-paper-plane"></i>ahlulkheir1@gmail.com</a>
        <a href="volunteer.html"> <i class="fa-solid fa-phone"></i>+254 723 802 894 </a>
        <a href="volunteer.html"> <i class="fa-solid fa-house"></i> Address </a>
        <a href="">
