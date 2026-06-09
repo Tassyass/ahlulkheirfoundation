@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/alhlul favicon.png">
+
+  <!-- fontawesome cdn -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+
+  <!-- Bootstrap cdn -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+
+  <!-- aos cdn -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- link css, media and favicon -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+
+  <style>
+    /* Mobile Text Improvements */
+    @media (max-width: 768px) {
+      p, h6 {
+        font-size: 15px;
+        line-height: 1.7;
+        letter-spacing: 0.2px;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      h1 {
+        font-size: 26px;
+        font-weight: bold;
+      }
+
+      h5 {
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 500;
+      }
+
+      .text-muted {
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+
+    /* M-PESA Section Responsive Styles */
+    .mpesa-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+      .mpesa-container {
+        max-width: 100%;
+        padding: 10px;
+      }
+      
+      .card {
+        margin: 0 15px;
+      }
+      
+      .lead {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      
+      h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+
+  <title>AhlulKheir Foundation</title>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" id="nav_bar">
+  <div class="container-fluid px-md-5">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="/images/ahlulkh logo.png" alt="Ahlulkheir logo" class="nav-logo">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-lg-center gap-lg-3 text-center">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="volunteer.html">Volunteer</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#aboutt">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#contactt">Contact Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">Projects</a>
+        </li>
+
+        <!-- Donate Button -->
+        <li class="nav-item ms-lg-3">
+          <a href="donate.html" class="btn donate-btn">
+            <i class="fas fa-heart me-1"></i> Donate
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+   <!-- HERO CAROUSEL -->
+<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+
+    <!-- SLIDE 1 -->
+    <div class="carousel-item active" data-bs-interval="5000">
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb');">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <h1>Serve Humanity.<br>Change Lives.</h1>
+          <p>
+            Millions lack access to food, clean water, and healthcare.
+            Together, we can restore dignity and hope.
+          </p>
+
+          <div class="hero-actions">
+            <a href="donate.html" class="btn hero-donate">Donate Now</a>
+            <a href="volunteer.html" class="btn hero-volunteer">Become a Volunteer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="carousel-item" data-bs-interval="5000">
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d');">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <h1>Your Compassion<br>Matters.</h1>
+          <p>
+            A small act of kindness today can transform an entire community tomorrow.
+          </p>
+
+          <div class="hero-actions">
+            <a href="donate.html" class="btn hero-donate">Support a Cause</a>
+            <a href="#aboutt" class="btn hero-volunteer">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="carousel-item" data-bs-interval="5000">
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53');">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+          <h1>Live for Others.</h1>
+          <p>
+            We’ve lived enough for ourselves.
+            Now is the time to uplift the less fortunate.
+          </p>
+
+          <div class="hero-actions">
+            <a href="donate.html" class="btn hero-donate">Give Hope</a>
+            <a href="project.html" class="btn hero-volunteer">See Our Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+ <!-- welcome -->
+ <!-- WELCOME / ABOUT US SECTION -->
+<section class="welcome-section container" data-aos="fade-up" data-aos-offset="-100" data-aos-delay="40" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+
+  <div class="row text-center" id="welcome">
+
+    <!-- Section Icon & Heading -->
+    <div class="col-12 mb-3">
+      <img src="/images/green no bg.png" alt="Green accent" class="welcome-icon" />
+      <h1 class="welcome-heading">WELCOME TO <span>AHLULKHEIR FOUNDATION</span></h1>
+    </div>
+
+    <!-- Story Text -->
+    <div class="col-md-8 offset-md-2 mb-4">
+      <p class="welcome-text">
+        In 2015, the Ahlul Kheir Foundation emerged from the aspirations of a group of dedicated women who came together with minimal resources but a shared vision to significantly impact the lives of those in need.<br class="d-none d-md-block">
+        Originally established as a community-based organization (CBO), their commitment and efforts gradually expanded over the years. By 2024, the organization had achieved official status as a non-governmental organization (NGO).<br class="d-none d-md-block">
+        Today, the foundation is devoted to addressing the challenges of poverty, enhancing healthcare systems, and promoting educational opportunities throughout Northeastern Kenya and beyond.
+      </p>
+    </div>
+
+    <!-- Sketch / Quote -->
+    <div class="col-12 text-center mt-1">
+      <img src="https://raw.githubusercontent.com/vinayshilpani/An-NGO-Website/master/assets/sketch-1.png" alt="Sketch Illustration" class="welcome-sketch mb-1" />
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- WHAT WE DO SECTION -->
+<section id="what-we-do" class="mt-1 py-1">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <div class="row text-center mb-1">
+      <div class="col-12">
+        <h1>
+          What We Do <img src="/images/green no bg.png" alt="Accent" width="15px">
+        </h1>
+        <p class="section-subtitle">
+          Our programs aim to provide essential support to communities in need.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4">
+
+      <!-- WATER RELIEF -->
+      <div class="col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="700">
+        <div class="wwd-card">
+          <div class="wwd-card-img">
+            <img src="/images/water.jfif" alt="Water Relief">
+          </div>
+          <div class="wwd-card-body text-center">
+            <h4>WATER RELIEF</h4>
+            <p>Hydration for the community</p>
+            <a href="project.html#waterr" class="wwd-link">View Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
+        <div class="wwd-card">
+          <div class="wwd-card-img">
+            <img src="/images/education.jfif" alt="Education">
+          </div>
+          <div class="wwd-card-body text-center">
+            <h4>EDUCATION</h4>
+            <p>Education for children</p>
+            <a href="project.html#edu" class="wwd-link">View Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEALTH -->
+      <div class="col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="700">
+        <div class="wwd-card">
+          <div class="wwd-card-img">
+            <img src="/images/health.jfif" alt="Health">
+          </div>
+          <div class="wwd-card-body text-center">
+            <h4>HEALTH</h4>
+            <p>Medicine for sick people</p>
+            <a href="project.html#health" class="wwd-link">View Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOD AID -->
+      <div class="col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="700">
+        <div class="wwd-card">
+          <div class="wwd-card-img">
+            <img src="/images/food.jfif" alt="Food Aid">
+          </div>
+          <div class="wwd-card-body text-center">
+            <h4>FOOD AID</h4>
+            <p>Food for the needy</p>
+            <a href="project.html#foodd" class="wwd-link">View Projects</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- VISION / MISSION / VALUES -->
+<div class="container mb-3 mb-md-4"> <!-- reduce mb-md-5 → mb-md-4 -->
+  <div class="row text-center" id="vision">
+    
+    <!-- Section heading -->
+    <div class="col-12 text-center mb-4"> <!-- add mb-4 for spacing below heading -->
+      <h1 id="aboutt">
+        <img src="/images/green no bg.png" alt="" class="m-0" width="15px" />
+        <br />
+        Initiatives and constructive transformation <br class="d-none d-md-block" />
+        worldwide.
+      </h1>
+      <img src="https://raw.githubusercontent.com/vinayshilpani/An-NGO-Website/master/assets/sketch-2.png" alt="" width="250px" class="mt-3" />
+    </div>
+
+    <!-- Mission -->
+    <div class="col-md-4 mb-4"> <!-- add mb-4 for spacing on mobile -->
+      <section>
+        <img src="/images/mission.png" alt="" class="img-fluid mb-2" width="60px" />
+      </section>
+      <h4>Our Mission</h4>
+      <p>
+        Empowering marginalized communities through sustainable development by addressing food security, healthcare, education, and disaster relief. The mission focuses on building resilience, promoting self-reliance, and creating innovative, culturally inclusive solutions. The organization ensures swift and effective crisis response to support those in need.
+      </p>
+    </div>
+
+    <!-- Vision -->
+    <div class="col-md-4 mb-4">
+      <section>
+        <img src="/images/vision.png" alt="" class="img-fluid mb-2" width="60px" />
+      </section>
+      <h4>Our Vision</h4>
+      <p>
+        A vision of a world where everyone has access to essential services like water, food, shelter, healthcare, sanitation, and education, ensuring a dignified life. The goal is to eliminate resource disparities, promote equal opportunities, and foster communities of shared prosperity and progress.
+      </p>
+    </div>
+
+    <!-- Values -->
+    <div class="col-md-4 mb-4">
+      <section>
+        <img src="/images/value.png" alt="" class="img-fluid mb-2" width="60px" />
+      </section>
+      <h4>Our Values</h4>
+      <p>
+        Our values are centered around compassion, integrity, and collaboration. We are committed to helping those in need with honesty and transparency, while working together with others to create lasting impact. We focus on sustainable solutions and empower communities to thrive independently.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+ <!-- achieve -->
+
+ <section class="container-fluid mb-5" id="achieve">
+   <div class="row py-md-5 py-5">
+     <div class="col-12 text-center">
+       <img src="/images/green no bg.png" alt="" width="60px" />
+       <h1>
+         This is the impact you helped <br class="d-none d-md-block" />
+         us achieve
+       </h1>
+     </div>
+     <div class="row text-center count_div">
+       <section class="col-sm-6 col-md-3">
+         <img src="" alt="" />
+         <p class="pt-2"><span id="number1">0</span>+</p>
+         <h5 class="">
+           Gave Education To The <br />
+           Uneducated Children
+         </h5>
+       </section>
+       <section class="col-sm-6 col-md-3">
+         <img src="" alt="" />
+         <p class="pt-2"><span id="number2">0</span>+</p>
+         <h5 class="g-0">
+           Gave Food To The <br />
+           Needed People
+         </h5>
+       </section>
+       <section class="col-sm-6 col-md-3">
+         <img src="" alt="" />
+         <p class="pt-2"><span id="number3">0</span>+</p>
+         <h5 class="">
+           Gave Water To The <br />
+           Needed People
+         </h5>
+       </section>
+       <section class="col-sm-6 col-md-3">
+         <img src="" alt="" />
+         <p class="pt-2"><span id="number4">0</span>+</p>
+         <h5 class="">
+           Provided Health Aid To <br />
+           Treat People
+         </h5>
+       </section>
+     </div>
+   </div>
+ </section>
+
+ <!-- Upcoming Events -->
+
+ <div class="container mb-5">
+   <div class="row my-3">
+     <div class="col text-center">
+       <img src="/images/green no bg.png" alt="" width="20px" />
+       <p class="m-0">READY TO HELP THEM</p>
+       <h1>Upcoming Events</h1>
+     </div>
+   </div>
+   <div class="row text-center" id="event">
+     <div
+       class="col-md-6 col-lg-4"
+       data-aos="flip-left"
+       data-aos-delay="10"
+       data-aos-duration="1000"
+       data-aos-easing="ease-in-out"
+       data-aos-anchor-placement="top-center"
+     >
+       <div class="card">
+  <span> Upcoming </span>
+  <img src="images/borehole.jpg" class="card-img-top" alt="Borehole Project" />
+  <div class="card-body text-center">
+    <h5>Community Borehole Water Project</h5>
+    <p class="text-muted">
+      <small>
+        AHLULKHEIR Foundation is preparing to drill a community borehole to provide clean, safe, and reliable water to families facing chronic water shortages. This project will improve health, reduce long walking distances, and support sustainable livelihoods for vulnerable communities.
+        <br class="d-none d-md-block" /><br>
+      </small>
+    </p>
+  </div>
+</div>
+
+     </div>
+     <div
+       class="col-md-6 col-lg-4"
+       data-aos="fade-up"
+       data-aos-delay="10"
+       data-aos-duration="1000"
+       data-aos-easing="ease-in-out"
+       data-aos-anchor-placement="top-center"
+     >
+       <div class="card">
+         <span> 17 Feb 2026 </span>
+         <img src="project/food7.jpg" class="card-img-top" alt="..." />
+         <div class="card-body text-center">
+           <h5>Beginning of Ramadhan </h5>
+           <p class="text-muted">
+             <small
+               >AHLULKHEIR Foundation provides food, water, and essential support to needy families, ensuring they can fast with ease and break their fast with dignity. Join us in spreading kindness and making a difference this blessed month.
+               <br class="d-none d-md-block" /><br>
+               </small
+             >
+           </p>
+           
+         </div>
+       </div>
+     </div>
+     <div
+       class="col-md-6 col-lg-4"
+       data-aos="flip-right"
+       data-aos-delay="10"
+       data-aos-duration="1000"
+       data-aos-easing="ease-in-out"
+       data-aos-anchor-placement="top-center"
+     >
+       <div class="card">
+         <span> 20 Mar 2026 </span>
+         <img src="project/food1.jpg" class="card-img-top" alt="..." />
+         <div class="card-body text-center">
+           <h5>Celebrating of Eid</h5>
+           <p class="text-muted">
+             <small>          
+               Eid is a time of joy, gratitude, and sharing. AHLULKHEIR Foundation spreads happiness by providing new clothes and special meals to needy families, ensuring they can celebrate with dignity and smiles. Together, we can make Eid a memorable and blessed occasion for all.
+
+               <br class="d-none d-md-block" />
+               </small
+             >
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- TEAM & TESTIMONIALS -->
+<section class="container-fluid mb-5" id="team-testimonials">
+  <div class="row py-md-5">
+      <!-- Team Section -->
+<section id="team" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Meet Our Team</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Team Member Card -->
+      <div class="col-12 col-sm-6 col-md-4 team-card">
+        <div class="team-inner">
+          <img src="images/rahma adan.jfif" alt="Rahma Adan">
+          <h5>Rahma Adan Abdullah</h5>
+          <span>Chairlady</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 team-card">
+        <div class="team-inner">
+          <img src="images/salwa omar.jfif" alt="Salwa Omar">
+          <h5>Salwa Omar</h5>
+          <span>Organizing Secretary</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 team-card">
+        <div class="team-inner">
+          <img src="images/mansur dahir.jpeg" alt="Mansur Adan">
+          <h5>Mansur Adan</h5>
+          <span>Secretary</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 team-card">
+        <div class="team-inner">
+          <img src="images/Maleek.jpeg" alt="Maleek Dahir">
+          <h5>Maleek Dahir</h5>
+          <span>Treasurer</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 team-card">
+        <div class="team-inner">
+          <img src="images/fatma.jpg" alt="Muslima Adan">
+          <h5>Muslima Adan</h5>
+          <span>Co-ordinator</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">What People Say</h1>
+      <div id="review_carousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <!-- Testimonial 1 -->
+          <div class="carousel-item active">
+            <div class="testimonial-wrapper p-4 text-center mx-auto">
+              <img src="https://raw.githubusercontent.com/vinayshilpani/An-NGO-Website/master/assets/quote-1.png" alt="" class="mb-3">
+              <p class="mb-3">"Ahlul Kheir Foundation has truly made a difference in our community. Their dedication to providing essential services like food, water, and healthcare has touched so many lives."</p>
+              <h5>Ayub Hassan <img src="/images/green no bg.png" alt="" width="15px"></h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="carousel-item">
+            <div class="testimonial-wrapper p-4 text-center mx-auto">
+              <img src="https://raw.githubusercontent.com/vinayshilpani/An-NGO-Website/master/assets/quote-1.png" alt="" class="mb-3">
+              <p class="mb-3">"The compassion and transparency they show in their work is inspiring. I'm proud to support an organization that genuinely cares about making a positive impact."</p>
+              <h5>Hassan Hassan <img src="/images/green no bg.png" alt="" width="15px"></h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="carousel-item">
+            <div class="testimonial-wrapper p-4 text-center mx-auto">
+              <img src="https://raw.githubusercontent.com/vinayshilpani/An-NGO-Website/master/assets/quote-1.png" alt="" class="mb-3">
+              <p class="mb-3">"Thanks to Ahlul Kheir Foundation, we have received the support we needed during difficult times. They don't just provide resources, they empower people to rebuild their lives."</p>
+              <h5>Ayub Timbe <img src="/images/green no bg.png" alt="" width="15px"></h5>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- helping hand -->
+ <section class="container-fluid border" id="helping_hand">
+   <div class="row px-md-5 d-flex align-items-center">
+     <div class="col-md-6 p-3 ps-md-5 text-center text-md-start">
+       <img src="/images/green no bg.png" alt="" width="15px" /> <br />
+       <small>Integrated Madrasas and Qur'anic school</small>
+       <h1 class="my-3">
+        Graduated Students from Our Madrasa<br/>
+        
+       </h1>
+       <p>
+        We proudly celebrate our madrasa graduates, who have gained valuable Islamic knowledge through dedication and hard work. We pray for their success as they apply their learning and contribute to their communities.
+      </p>
+       
+     </div>
+     <div class="col-md-6 text-center" id="hh_img2">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Ya7-mU82Vs?si=FfUHo23b0Zkt_y-X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     </div>
+   </div>
+ </section>
+
+ <!-- M-PESA Payment Section -->
+ <section class="container-fluid mb-5 text-center">
+   <div class="row justify-content-center">
+     <div class="col-md-8">
+       <div class="card p-4 shadow-sm">
+         <h2 class="mb-4" style="color: #00563B;">Support Our Cause</h2>
+         <div class="mpesa-container px-2">
+           <img src="/images/mpesa.png" alt="Lipa na M-PESA" class="img-fluid mb-4" style="max-width: 100%; height: auto;">
+         </div>
+         <div class="mb-4 px-3">
+           <p class="lead" style="color: #00563B; font-weight: 500;">
+             Your contribution changes lives locally and globally. Thank you for making a difference!
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- Become Helper Section -->
+<section class="container-fluid py-5" id="help">
+  <div class="overlay"></div>
+  <div class="row justify-content-center align-items-center text-center position-relative">
+    <div class="col-12 col-md-8">
+      <h1 class="help-heading">
+        Help People <br class="d-none d-md-block" />
+        Change Lives <br class="d-none d-md-block" />
+        Locally & Globally
+      </h1>
+      <p class="help-subtext">
+        Join Ahlul Kheir Foundation and become a volunteer. Your time, effort, and heart can make a real difference in the lives of those in need.
+      </p>
+      <a href="volunteer.html" class="btn btn-help">Become a Volunteer</a>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Footer -->
+<footer id="footer" class="pt-5 pb-3">
+  <div class="container">
+    <div class="row text-white">
+
+      <!-- About -->
+      <div class="col-md-4 mb-4">
+        <h5>AHLULKHEIR Foundation</h5>
+        <p>
+          AHLULKHEIR Foundation supports needy Muslim communities in northern Kenya by providing food, water, education, and shelter. Committed to creating lasting change, the organization fosters compassion and solidarity for a brighter future.
+        </p>
+        <div class="social-icons mt-3">
+          <a href="http://www.youtube.com/@AHLULKHEIRFOUNDATION-q3w" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/ahlulkheir__?igsh=MXVtc3IyamtwdTl4NQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@ahlulkheir.foundation?_r=1&_t=ZS-93m2kPszUmO" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 mb-4">
+        <h5>Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#what-we-do">What We Do</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="#aboutt">About Us</a></li>
+          <li><a href="#contactt" id="contactt">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 mb-4">
+        <h5>Contact</h5>
+        <p><i class="fas fa-envelope"></i> foundationahlulkheir@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> +254 723 802 894</p>
+        <p><i class="fas fa-map-marker-alt"></i> Maralal Oasis, Kilimani, Nairobi, Kenya</p>
+      </div>
+
+      <!-- Support Us -->
+<div class="col-md-3 mb-4">
+  <h5>Support Us</h5>
+  <p>Your contribution helps us reach more people in need.</p>
+  <a href="/donate.html" class="btn btn-footer w-100">
+    <i class="fas fa-hand-holding-heart"></i> Donate Now
+  </a>
+</div>
+
+
+    </div>
+
+    <hr class="border-light">
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="small mb-0">&copy; 2026 AHLULKHEIR Foundation. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+ <!-- bootstrap script -->
+ <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+   crossorigin="anonymous"
+ ></script>
+
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+</body>
+</html>   

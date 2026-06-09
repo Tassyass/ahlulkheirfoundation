@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/alhlul favicon.png">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <title>Become a Volunteer</title>
+</head>
+<body>
+     <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" id="nav_bar">
+  <div class="container-fluid px-md-5">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="/images/ahlulkh logo.png" alt="Ahlulkheir logo" class="nav-logo">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-lg-center gap-lg-3 text-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="volunteer.html">Volunteer</a>
+        </li> 
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#aboutt">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact volunteer">Contact Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">Projects</a>
+        </li>
+
+        <!-- Donate Button -->
+        <li class="nav-item ms-lg-3">
+          <a href="donate.html" class="btn donate-btn">
+            <i class="fas fa-heart me-1"></i> Donate
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+   <style>
+    /* =========================
+   VOLUNTEER SECTION
+========================= */
+.volunteer-section {
+  padding: 60px 15px;
+  background-color: #f4f7f6;
+}
+
+/* Heading */
+.volunteer-section h2 {
+  font-weight: 700;
+  color: #0c6b3f;
+  margin-bottom: 10px;
+}
+
+.volunteer-section p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   VOLUNTEER FORM
+========================= */
+#volunteerForm {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Labels */
+#volunteerForm label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Inputs */
+#volunteerForm input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+#volunteerForm input:focus {
+  border-color: #0c6b3f;
+  box-shadow: none;
+}
+
+/* Submit Button */
+#volunteerForm button {
+  background-color: #0c6b3f;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+#volunteerForm button:hover {
+  background-color: #094f2f;
+  transform: translateY(-1px);
+}
+
+/* Success Message */
+#successMessage {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+   </style>
+   <!-- VOLUNTEER SECTION -->
+<div class="volunteer-section">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <h2 class="text-center">Sign Up to Become a Volunteer</h2>
+    <p class="text-center mb-4">
+      Join us in serving humanity and making a real impact in our community.
+    </p>
+
+    <form id="volunteerForm" class="mx-auto" style="max-width: 400px;">
+
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="e.g. +254 7XX XXX XXX" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Submit</button>
+
+    <p id="successMessage" class="text-success text-center mt-3" style="display:none;">
+      ✅ Thank you! Your details were submitted.
+    </p>
+
+  </form>
+
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDKFyCBc27NCDB4EMBpb_XoNUlkb6Y_ke4",
+  authDomain: "ahlulkvoluntee.firebaseapp.com",
+  databaseURL: "https://ahlulkvoluntee-default-rtdb.firebaseio.com",
+  projectId: "ahlulkvoluntee",
+  storageBucket: "ahlulkvoluntee.firebasestorage.app",
+  messagingSenderId: "4307021315",
+  appId: "1:4307021315:web:8b66d8e09792bad3e16836"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const form = document.getElementById("volunteerForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+
+  await push(ref(db, "volunteers"), {
+    name,
+    phone,
+    email,
+    checked: false,
+    date: new Date().toLocaleString()
+  });
+
+  form.reset();
+  document.getElementById("successMessage").style.display = "block";
+});
+</script>
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer id="footer" class="pt-5 pb-3">
+  <div class="container">
+    <div class="row text-white">
+
+      <!-- About -->
+      <div class="col-md-4 mb-4">
+        <h5>AHLULKHEIR Foundation</h5>
+        <p>
+          AHLULKHEIR Foundation supports needy Muslim communities in northern Kenya by providing food, water, education, and shelter. Committed to creating lasting change, the organization fosters compassion and solidarity for a brighter future.
+        </p>
+        <div class="social-icons mt-3">
+          <a href="http://www.youtube.com/@AHLULKHEIRFOUNDATION-q3w" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/ahlulkheir__?igsh=MXVtc3IyamtwdTl4NQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@ahlulkheir.foundation?_r=1&_t=ZS-93m2kPszUmO" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 mb-4">
+        <h5>Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#what-we-do">What We Do</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="#aboutt">About Us</a></li>
+          <li><a href="#contactt" id="contact volunteer">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 mb-4">
+        <h5>Contact</h5>
+        <p><i class="fas fa-envelope"></i> foundationahlulkheir@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> +254 723 802 894</p>
+        <p><i class="fas fa-map-marker-alt"></i> Maralal Oasis, Kilimani, Nairobi, Kenya</p>
+      </div>
+
+      <!-- Support Us -->
+<div class="col-md-3 mb-4">
+  <h5>Support Us</h5>
+  <p>Your contribution helps us reach more people in need.</p>
+  <a href="/donate.html" class="btn btn-footer w-100">
+    <i class="fas fa-hand-holding-heart"></i> Donate Now
+  </a>
+</div>
+
+      <div class="admin-btn-wrapper"><a href="admin-post.html" class="admin-btn">Admin post</a></div>
+
+      <style>
+        /* Center wrapper */
+.admin-btn-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Button style */
+.admin-btn {
+  display: inline-block;
+  padding: 8px 20px;      /* smaller size */
+  font-size: 13px;        /* smaller text */
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
+
+  /* Gradient background */
+  background: linear-gradient(270deg, #00c9a7, #00b4d8, #00c9a7);
+  background-size: 400% 400%;
+
+  /* Animation */
+  animation: gradientFlow 6s ease infinite;
+
+  /* Shadow */
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.admin-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.6);
+}
+
+/* Click effect */
+.admin-btn:active {
+  transform: scale(0.95);
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+      </style>
+    </div>
+
+    <hr class="border-light">
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="small mb-0">&copy; 2026 AHLULKHEIR Foundation. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- EmailJS Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("hNoBKzLxmtvGm1YYB"); // Your EmailJS Public Key
+        });
+
+        document.getElementById('volunteerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collect form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // Ensure no empty fields are sent
+            if (!name || !phone || !email) {
+                alert("Please fill in all fields before submitting.");
+                return;
+            }
+
+            // Template parameters (MUST match EmailJS template)
+            const templateParams = {
+                name: name,  // Must match {{name}} in EmailJS template
+                phone: phone, // Must match {{phone}} in EmailJS template
+                email: email  // Must match {{email}} in EmailJS template
+            };
+
+            // Send email using EmailJS
+            emailjs.send("service_kvk4b7r", "template_wai5b4s", templateParams)
+                .then(function(response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('volunteerForm').reset();
+                })
+                .catch(function(error) {
+                    console.error("FAILED...", error);
+                    alert("Error: " + JSON.stringify(error)); // Show detailed error message
+                });
+        });
+    </script>
+</body>
+</html>
