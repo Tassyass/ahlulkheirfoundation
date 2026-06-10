@@ -10,4 +10,6 @@ Pass - Ahlulkheir@2024
 
 
 
-
+<!-- admin button 
+      <div class="admin-btn-wrapper"><a href="admin-post.html" class="admin-btn">Admin post</a></div>
+      -->
